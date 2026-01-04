@@ -1,0 +1,57 @@
+:root {
+    --primary-color: #57763e;
+    --primary-color-dark: #3e552c; /* Ajustei para ser mais escuro que a primary */
+    --secondary-color: #ebe9e9;
+    --text-color: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    /* Gradiente ajustado para ser mais suave */
+    background: linear-gradient(135deg, #57763e 0%, #ebe9e9 100%);
+    background-attachment: fixed; 
+}
+
+/* Navbar Principal */
+.navbar-brand {
+    font-family: 'PT Serif', serif;
+    font-weight: 700; 
+    text-transform: uppercase;
+    color: var(--secondary-color) !important;
+    letter-spacing: 1px;
+    
+}
+
+/* Menu de Categorias (Nav secundária) */
+#menu-categorias {
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+
+#menu-categorias .btn {
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+    border-radius: 20px; 
+    margin-right: 8px;
+    font-weight: 500;
+    transition: all 0.4s ease;
+    background-color: transparent;
+}
+
+
+#menu-categorias .btn:hover {
+    background-color: var(--primary-color-dark);
+    color: var(--secondary-color); 
+    transform: scale(1.05);
+}
+
+
+
+
