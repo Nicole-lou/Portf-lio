@@ -9,35 +9,137 @@
 --light-purple: #7b2cbf;
 --black: #000000;
  --white: #FFFFFF;
+ --background: #dad7d7;
  }
 
 body {
-background: linear-gradient(to bottom, var(--dark-purple), var(--black));
-color: var(--white);
- font-family: 'Montserrat' 'Arial', sans-serif;
+background: linear-gradient(to bottom, var(--white), var(--background));
+ font-family: 'jost', sans-serif;
+ font-weight: 400;
  min-height: 100vh;
 }
 
-/* Navbar Styles */
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px 10%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
+img {
+    max-width: 100%;
 }
 
-.navbar a {
-    display: inline-block;
-   font-size: 30px;
-   color: var(--white);
-   text-decoration: none;
-   font-weight: 600;
-   margin-left: 35px;
-    transition: 0.3s;
-  font-family: 'Montserrat', sans-serif;
+/* Navbar Styles */
+a {
+    color: var(--black);
+    text-decoration: none;
 }
+
+a:hover {
+    color: var(--dark-purple);
+    text-decoration: none;
+}
+
+.text {
+    color: var(--light-purple) !important;
+}
+
+/* Botão Menu Mobile */
+.btn-menu {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-menu img {
+    width: 28px;
+    height: 28px;
+    transition: all 0.3s ease;
+}
+
+.btn-menu:hover img {
+    filter: brightness(0.8);
+}
+
+.btn-menu.active img {
+    content: url('../img/close.svg');
+}
+
+/* Sidebar Menu Responsivo */
+.navbar-collapse {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(135deg, var(--white), var(--background));
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    z-index: 999;
+}
+
+.navbar-collapse.show {
+    max-height: calc(100vh - 80px);
+}
+
+.navbar-nav {
+    flex-direction: column;
+    gap: 10px;
+    margin: 0 !important;
+}
+
+.navbar-nav li {
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    padding: 12px 20px;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(123, 44, 191, 0.1);
+    color: var(--light-purple);
+}
+
+/* Telas Maiores - Desktop */
+@media (min-width: 992px) {
+    .btn-menu {
+        display: none;
+    }
+
+    .navbar-collapse {
+        position: static;
+        top: auto;
+        left: auto;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        max-height: none;
+        overflow: visible;
+        z-index: auto;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    .navbar-nav li {
+        text-align: left;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 8px 15px;
+        border-bottom: none;
+    }
+
+    .navbar-nav .nav-link:hover {
+        background-color: transparent;
+    }
+}
+
 
